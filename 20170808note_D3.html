@@ -1,0 +1,215 @@
+<html>
+
+<head>
+    <!-- <script src=""></script>
+    <link rel="stylesheet" href=""> -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+</head>
+
+<body>
+    <div id="chart">
+        <div>Title of the graph</div>
+        <svg width="300" height="200"></svg>
+    </div>
+    <script>
+        var svg = d3.select('#chart svg')
+            // svg
+            //     .append('circle')
+            //     .attr('cx', 50)
+            //     .attr('cy', 160)
+            //     .attr('r', 10)
+            //调整坐标轴范围可以自动变化适应数据，使数据始终显示在画框内（下）
+        var gdpScale = d3.scaleLinear()
+            .domain([0, 300000])
+            .range([0, 300])
+        var lifeScale = d3.scaleLinear()
+            .domain([0, 100])
+            .range([200, 0])
+
+        //建立数据集，可以将数据集另存为json格式，调用（下）
+        // var data = [
+        //     [{
+        //         Country: "A",
+        //         GDP: 5000,
+        //         Life: 40,
+        //         Population: 50
+        //     }, {
+        //         Country: "B",
+        //         GDP: 10000,
+        //         Life: 30,
+        //         Population: 100
+        //     }, {
+        //         Country: "C",
+        //         GDP: 5000,
+        //         Life: 50,
+        //         Population: 100
+        //     }],
+        //     [{
+        //         Country: "A",
+        //         GDP: 15000,
+        //         Life: 60,
+        //         Population: 50
+        //     }, {
+        //         Country: "B",
+        //         GDP: 12000,
+        //         Life: 50,
+        //         Population: 100
+        //     }, {
+        //         Country: "C",
+        //         GDP: 8000,
+        //         Life: 40,
+        //         Population: 100
+        //     }],
+        //     [{
+        //         Country: "A",
+        //         GDP: 20000,
+        //         Life: 60,
+        //         Population: 50
+        //     }, {
+        //         Country: "B",
+        //         GDP: 25000,
+        //         Life: 20,
+        //         Population: 100
+        //     }, {
+        //         Country: "C",
+        //         GDP: 10000,
+        //         Life: 40,
+        //         Population: 100
+        //     }]
+        // ]
+
+        function updateChart(data) {
+            var circles = svg
+                .selectAll('circle')
+                .data(data, function(d, i) {
+                    return d['Country']
+                })
+            circles
+                .enter()
+                .append('circle')
+                .merge(circles)
+                .style('fill', 'rgba(200,200,0,0.6)')
+                .transition()
+                .attr('r', 10)
+                .attr('cx', function(d, i) {
+                    // console.log(d)
+                    // console.log(i)
+                    return gdpScale(d['GDP'])
+                })
+                .attr('cy', function(d, i) {
+                    // console.log(d)
+                    // console.log(i)
+                    return lifeScale(d['Life'])
+                })
+            circles
+            //将旧的圈圈取消
+                .exit()
+                .transition()
+                // .remove() //将之前数据移除掉,和style(0000)功能一样
+                .style('fill', 'rgb(0,0,0,0)')
+                .on('end', function(d, i) { //on事件监听，end事件名称
+                    d3.select(this).remove()
+                })
+            var texts = svg
+                .selectAll('text.label')
+                .data(data, function(d, i) {
+                    return d['Country']
+                })
+            texts
+                .enter()
+                .append('text')
+                .classed('label', true)
+                .text(function(d, i) {
+                    return d['Country']
+                })
+
+            .merge(texts)
+                .transition()
+                .attr('r', 10)
+                .attr('x', function(d, i) {
+                    // console.log(d)
+                    // console.log(i)
+                    return (gdpScale(d['GDP']) + 10)
+                })
+                .attr('y', function(d, i) {
+                    // console.log(d)
+                    // console.log(i)
+                    return lifeScale(d['Life'])
+                })
+            texts
+                .exit()
+                .transition()
+                // .remove() //将之前数据移除掉
+                .style('fill', 'rgb(0,0,0,0)')
+                .on('end', function() { //on事件监听，end事件名称
+                    d3.select(this).remove()
+                })
+
+            //监听click动作
+            // svg.selectAll('circle')
+            //     .on('click', function() {
+            //         console.log('here');
+            //         d3.select(this).remove()
+            //     })
+            // svg.on('clink', function() {
+            //     console.log('there');
+            //     svg.append('circle')
+            //         .attr('r', 10)
+            //         .attr('cx',
+            //             d3.event.clientX)
+            //     attr('cy', d3.event.clientY)
+            //     console.log('circle')
+            // })
+
+            // d3.json('20170808_d3data.json', function(myData) {
+            //         var yearIndex = 1
+            //         updateChart(myData[yearIndex])
+            //     })
+        }
+        d3.json('20170808_d3data.json', function(myData) {
+            // console.log(myData)
+            var yearIndex = 0
+                // updateChart(myData[yearIndex])
+            d3.interval(function() {
+                // console.log(yearIndex)
+                updateChart(myData[yearIndex])
+                yearIndex = (yearIndex + 1) % myData.length
+            }, 1000)
+
+
+        })
+        var gdpAxis = d3.axisBottom(gdpScale)
+        svg
+            .append('g')
+            .classed('xaxis', true)
+            .attr('transform', 'translate(0, 150)')
+            .call(gdpAxis)
+        svg.selectAll('.xaxis text')
+            .attr("y", 0)
+            .attr("x", 20)
+            .attr("dy", ".35em")
+            .attr('transform', 'rotate(90)')
+        var lifeAxis = d3.axisLeft(lifeScale)
+        svg
+            .append('g')
+            .attr('transform', 'translate(20, 0)')
+            .call(lifeAxis)
+
+        // updateChart(data)
+        // setTimeout(function() {
+        //     updateChart(data)
+        // }, 3000)
+    </script>
+    <!-- <svg width="300" height="200">
+            <circle r=20 cx=50 cy=150></circle>
+            <circle r=20 cx=150 cy=150></circle> 
+            <g transform="translate(5,20) rotate(-20)">
+                <circle r=20 cx=50 cy=50></circle> 
+                <rect width=150 height=20 x=10 y=80></rect>
+                <text y=120 x=20>my text</text>
+            </g>
+        </svg> -->
+    </div>
+</body>
+
+</html>

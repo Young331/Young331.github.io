@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<title>自来水还好吗？</title>
+
+<head>
+    <style>
+        #header {
+            position: fixed;
+            width: 100%;
+            height: 100px;
+            background-color: whitesmoke;
+            z-index: 1
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="header">
+        <div id="greeting" class="animated pulse " style="font-family:sans-serif;font-size:50px;margin-left:50px; "></div>
+        <script>
+            var d = new Date();
+            var greetingString = 'now';
+            if (d.getHours() < 4) {
+                greetingString = 'good night';
+            } else if (d.getHours() < 12) {
+                greetingString = 'good morning';
+            } else if (d.getHours() < 18) {
+                greetingString = 'good afternoon';
+            } else {
+                // > 18:00
+                greetingString = 'good evening';
+            }
+            document.getElementById('greeting').innerHTML = 'Hi, ' + greetingString + '!';
+        </script>
+        <div class="indextag">
+        </div>
+    </div>
+    <picture>
+        <source sccset="background.jpg" media="(max-width:400px)">
+        <source srcset="background.jpg">
+        <img src="background.jpg" alt="water" style="width:auto">
+    </picture>
+    <div id="header" style="background-color:red"> header</div>
+    <div id="ads" style="background-color:green">Ads</div>
+    <div id="main" style="background-color:blue">main</div>
+    <div id="sidebar" style="background-color:grey">sidebar</div>
+    <div id="footer">footer</div>
+
+</body>
+
+</html>

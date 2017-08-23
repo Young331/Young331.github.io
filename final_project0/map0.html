@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts.china.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu
+        }
+        
+        html,
+        body {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: rgb(11, 13, 24);
+        }
+        
+        .container {
+            position: absolute;
+            width: 1366px;
+            height: 643px;
+            /*margin: 0 auto;*/
+            top: 50%;
+            left: 50%;
+            margin-left: -683px;
+            margin-top: -321px;
+        }
+        
+        #charts {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        #data-from {
+            display: none;
+            padding: 10px 15px;
+            position: absolute;
+            /* top: 20px; */
+            /* left: 20px; */
+            /* background-color: rgba(255, 255, 255, 0.5); */
+            width: 300px;
+            border-radius: 4px;
+            right: 50px;
+            bottom: 50px;
+        }
+        /*		h3 {
+                color: white;
+            }*/
+        
+        #data-from p {
+            text-indent: 31px;
+            color: #fefefe;
+            font-size: 14px;
+        }
+        
+        .tip {
+            position: absolute;
+            top: 500px;
+            left: 1045px;
+            color: #fff;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="data-from">
+            <!-- <h3>数据来源</h3> -->
+            <p>数据来源：本作品根据 中华人民共和国环境保护部数据中心 提供的全国主要流域重点断面 历年的监测数据汇总而成。。</p>
+        </div>
+        <div class="tip">
+            <p>
+                *点击圆点按类型查看
+            </p>
+            <br>
+            <p>
+                *数据来源于环保部数据中心
+            </p>
+        </div>
+        <div id="charts" _echarts_instance_="ec_1503047322790" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background-color: rgba(0, 0, 0, 0);">
+            <div style="position: relative; overflow: hidden; width: 1366px; height: 643px; cursor: default;"><canvas width="1366" height="643" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 1366px; height: 643px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></canvas></div>
+            <div></div>
+        </div>
+    </div>
+    <script src="js/mapdata.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        var chart = echarts.init(document.getElementById('main'));
+        chart.setOption({
+            series: [{
+                type: 'map',
+                map: 'china'
+            }]
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+* {
+    box-shadow: none !important;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(11, 13, 24);
+}
+
+.main-navigation {
+    text-align: center;
+    background: #ffffff;
+    border-top: 5px solid #ebebeb;
+    margin-bottom: 35px;
+    border-bottom: 2px solid #e1e1e1;
+    top: 0px;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 1
+}
+
+.navbar-header {
+    text-align: center;
+}
+
+#menu-toggle {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+}
+
+a {
+    font-family: 'Microsoft YaHei', sans-serif;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+div.form-group {
+    margin-right: 60px;
+}
+
+.main-navigation .menu {
+    padding: 0;
+    margin: 0;
+}
+
+.main-navigation .menu li.nav-current {
+    border-bottom: 2px solid #f4645f;
+    margin-bottom: -2px;
+}
+
+.main-navigation .menu li {
+    list-style: none;
+    display: inline-block;
+    position: absolute;
+}
+
+.main-navigation .menu li a {
+    color: #505050;
+    line-height: 4em;
+    display: block;
+    padding: 0 70px;
+}
+
+div.pageshow {
+    height: 100px;
+    overflow: hidden;
+}
+
+div.pageshow video {
+    position: relative;
+    top: -300px;
+}
+
+div.pageshow.p3 video {
+    position: relative;
+    top: -280px;
+}
+
+div.pageshow2 {
+    height: 230px;
+    overflow: hidden;
+    background: url('../images/fact.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 -264px;
+}
+
+.main-content {
+    margin-bottom: 35px;
+}
+
+article {
+    background: #fff;
+}
+
+.post {
+    padding: 35px;
+    background: #ffffff;
+    margin-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.post .post-head .post-title {
+    margin: 0;
+    font-size: 2.0em;
+    line-height: 1.2em;
+}
+
+.post .post-head .post-meta {
+    color: #959595;
+    margin: 14px 0 0px;
+}
+
+.post .post-head {
+    text-align: center;
+}
+
+.post .post-head .post-title a {
+    color: #303030;
+}
+
+.post .post-content {
+    margin: 30px 0;
+}
+
+.post .post-footer {
+    margin-top: 30px;
+    border-top: 1px solid #ebebeb;
+    padding: 21px 0 0;
+    color: #959595;
+}
+
+.main-footer {
+    background: #202020;
+    color: #959595;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 28px;
+    padding-bottom: 28px
+}
+
+#example_video_1 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.bannerback {
+    background: url(../images/banner1.jpg);
+    background-size: cover;
+}
+
+div.mb50 {
+    margin-bottom: 50px;
+}
+
+p.res {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#intake {
+    color: red;
+}
+
+.post-content ol li {
+    font-size: 16px;
+    line-height: 2em;
+}
+
+.post-content p {
+    font-size: 16px;
+    line-height: 2em;
+    margin-bottom: 1em;
+    text-indent: 2em;
+}
+
+span.comment {
+    color: #333;
+}
