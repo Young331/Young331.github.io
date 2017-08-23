@@ -1,6 +1,7 @@
 /**
  * 对数据进行提取
- * @param  {obj} data 原始数据
+ * <script src="js/mapdata.js"></script>
+ *  @param  {obj} data 原始数据
  * @return {obj}      处理后的数据（数组形式）
  */
 var sortData = function(data) {
