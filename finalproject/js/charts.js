@@ -1,9 +1,9 @@
-/**
- * 对数据进行提取
- * <script src="js/mapdata.js"></script>
- *  @param  {obj} data 原始数据
+/**  对数据进行提取
+ 
+  * @param  {obj} data 原始数据
  * @return {obj}      处理后的数据（数组形式）
  */
+
 var sortData = function(data) {
     var time = [];
     var ret_data = {};
@@ -627,7 +627,7 @@ option = {
                     data: convertData(new_data['2005']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2005']['5']),
                 },
                 {
@@ -654,7 +654,7 @@ option = {
                     data: convertData(new_data['2006']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2006']['5']),
                 },
                 {
@@ -681,7 +681,7 @@ option = {
                     data: convertData(new_data['2007']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2007']['5']),
                 },
                 {
@@ -708,7 +708,7 @@ option = {
                     data: convertData(new_data['2008']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2008']['5']),
                 },
                 {
@@ -735,7 +735,7 @@ option = {
                     data: convertData(new_data['2009']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2009']['5']),
                 },
                 {
@@ -762,7 +762,7 @@ option = {
                     data: convertData(new_data['2010']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2010']['5']),
                 },
                 {
@@ -789,7 +789,7 @@ option = {
                     data: convertData(new_data['2011']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2011']['5']),
                 },
                 {
@@ -816,7 +816,7 @@ option = {
                     data: convertData(new_data['2012']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2012']['5']),
                 },
                 {
@@ -843,7 +843,7 @@ option = {
                     data: convertData(new_data['2013']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2013']['5']),
                 },
                 {
@@ -870,7 +870,7 @@ option = {
                     data: convertData(new_data['2014']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2014']['5']),
                 },
                 {
@@ -897,7 +897,7 @@ option = {
                     data: convertData(new_data['2015']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2015']['5']),
                 },
                 {
@@ -924,7 +924,7 @@ option = {
                     data: convertData(new_data['2016']['4']),
                 },
                 {
-                    name: 'V类：不适合饮用,适用于一般工业用和人体非直接接触娱乐用水',
+                    name: 'V类：不适合饮用，适用于农业用水区及一般景观要求水域',
                     data: convertData(new_data['2016']['5']),
                 },
                 {

@@ -1,3 +1,86 @@
 /* .myclass {
     margin: 100px;
 } */
+
+
+/* body {
+    font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu
+} */
+
+.containermap {
+    position: relative;
+    width: 1366px;
+    height: 600px;
+    /*margin: 0 auto;*/
+    top: 40%;
+    left: 50%;
+    margin-left: -683px;
+    margin-top: -321px;
+}
+
+#charts {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.tip {
+    position: relative;
+    top: 50px;
+    left: 445px;
+    color: #fff;
+    font-size: 1px;
+    font-family: 0.01em
+}
+
+#num {
+    color: #ac2b24;
+    font-size: 30px;
+}
+
+.about2 {
+    position: absolute;
+    height:
+}
+
+.post {
+    padding: 35px;
+    background: #ffffff;
+    margin-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.post .post-head .post-title {
+    margin: 0;
+    font-size: 2.0em;
+    line-height: 1.2em;
+}
+
+.post .post-head .post-meta {
+    color: #959595;
+    margin: 14px 0 0px;
+}
+
+.post .post-head {
+    text-align: center;
+}
+
+.post .post-head .post-title a {
+    color: #303030;
+}
+
+.post .post-content {
+    left: 33%;
+    position: relative;
+}
+
+.post .post-footer {
+    margin-top: 30px;
+    border-top: 1px solid #ebebeb;
+    padding: 21px 0 0;
+    color: #959595;
+    left: 30%;
+    position: relative;
+}
